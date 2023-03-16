@@ -11,7 +11,7 @@ const App = () => {
           <Text style={styles.text2}>ONLINE DISCOUNT STORE</Text>
         </View>
       </View>
-      <TouchableOpacity style={styles.box2}>
+      <TouchableOpacity>
         <Text style={styles.startBtn}>Get Started</Text>
       </TouchableOpacity>
     </View>
@@ -25,17 +25,15 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'space-evenly',
     alignItems: 'center',
-    backgroundColor: "aliceblue"
   },
   box1: {
-    backgroundColor: "cyan"
-  },
-  box2: {
-    backgroundColor: "yellow"
+    flex: 0.4,
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
   },
   logo: {
     width: 350,
-    height: '35%',
+    height: '40%',
     paddingLeft: 2,
     paddingRight: 2,
   },
@@ -45,14 +43,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   text1: {
-    fontSize: 30,
+    fontSize: 28,
     fontWeight: 'bold',
-    color: 'green',
+    color: '#6cd205',
   },
   text2: {
     fontSize: 14,
     fontWeight: '700',
-    color: 'blue',
+    color: '#0c6fa6',
   },
   startBtn: {
     display: 'flex',
@@ -60,7 +58,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderColor: 'black',
     borderWidth: 5,
-    borderColor: "green",
+    borderColor: "#6cd205",
     borderRadius: 10,
     paddingTop: 10,
     paddingBottom: 5,
@@ -68,7 +66,9 @@ const styles = StyleSheet.create({
     paddingRight: 20,
     fontSize: 25,
     fontWeight: 800,
+    color: 'aliceblue',
+    backgroundColor: '#6cd205',
     shadowColor: 'gray',
-    backgroundColor: '#96fb44',
+    elevation: 3,
   },
 })
