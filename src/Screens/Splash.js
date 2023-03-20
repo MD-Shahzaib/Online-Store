@@ -6,7 +6,7 @@ const Splash = ({ navigation }) => {
     // Splash Effect.
     useEffect(() => {
         setTimeout(() => {
-            navigation.navigate('Register')
+            navigation.navigate('Home')
         }, 3000)
     }, [])
 
@@ -20,7 +20,7 @@ const Splash = ({ navigation }) => {
                 </View>
             </View>
             <TouchableOpacity>
-                <Text style={styles.startBtn} onPress={() => navigation.navigate('Register')}>Get Started</Text>
+                <Text style={styles.startBtn} onPress={() => navigation.navigate('Home')}>Get Started</Text>
             </TouchableOpacity>
         </View>
     )
