@@ -11,12 +11,10 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 const Register = ({ navigation }) => {
     return (
         <View style={styles.mainConatiner} >
-
             <View style={styles.title}>
                 <Text style={styles.text1}>SAYLANI WELFARE</Text>
                 <Text style={styles.text2}>ONLINE DISCOUNT STORE</Text>
             </View>
-
             <View style={styles.textBox}>
                 <View style={styles.inputBox}>
                     <TextInput placeholder='Full Name' style={styles.input} />
@@ -36,12 +34,10 @@ const Register = ({ navigation }) => {
                     {/* <Ionicons name="eye-off" size={30} color="#BAC4C7" style={styles.inputIcon} /> */}
                 </View>
             </View>
-
             <TouchableOpacity>
                 <Text style={styles.startBtn} onPress={() => navigation.navigate('Login')}>Sign Up</Text>
                 <Text style={styles.accountText} onPress={() => navigation.navigate('Login')}>Already have an account? Login</Text>
             </TouchableOpacity>
-
         </View>
     )
 }
