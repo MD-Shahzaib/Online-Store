@@ -1,6 +1,6 @@
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
-import React from 'react'
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
+import React from 'react';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 const Home = () => {
     return (
@@ -11,7 +11,11 @@ const Home = () => {
                     <Text style={styles.text2}>ONLINE DISCOUNT STORE</Text>
                 </View>
                 <TouchableOpacity>
-                    <MaterialIcons name="shopping-cart" color="black" size={30} />
+                    <MaterialIcons
+                        name="shopping-cart"
+                        color="black"
+                        size={30}
+                    />
                 </TouchableOpacity>
             </View>
         </View>
@@ -20,17 +24,12 @@ const Home = () => {
 
 export default Home;
 
-
 const styles = StyleSheet.create({
     homeContainer: {
         flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
         backgroundColor: 'green',
-        // paddingHorizontal: 5,
-        // paddingVertical: 5,
-        // display: 'flex',
-        // flexDirection: 'row',
-        // justifyContent: 'space-between',
-        // alignItems: 'center'
     },
     topNav: {
         backgroundColor: 'yellow',

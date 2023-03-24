@@ -22,8 +22,8 @@ const Login = ({ navigation }) => {
                     <Ionicons name="eye" size={30} color="#BAC4C7" style={styles.inputIcon} />
                     {/* <Ionicons name="eye-off" size={30} color="#BAC4C7" style={styles.inputIcon} /> */}
                 </View>
-                {/* temporary navigate to home onpress forget password */}
-                <Text style={styles.forgotText} onPress={() => navigation.navigate('Home')}>Forgot Password?</Text>
+                {/* temporary navigate to BottomNavigation.js onpress forget password */}
+                <Text style={styles.forgotText} onPress={() => navigation.navigate('BottomNavigation')}>Forgot Password?</Text>
             </View>
             <TouchableOpacity>
                 <Text style={styles.startBtn} onPress={() => navigation.navigate('Register')}>Sign In</Text>
