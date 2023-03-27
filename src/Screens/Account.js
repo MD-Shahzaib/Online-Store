@@ -4,7 +4,7 @@ import React from 'react'
 const Account = () => {
     return (
         <View style={styles.accountbox}>
-            <Text>Account</Text>
+            <Text style={{ color: 'white', }}>Account</Text>
         </View>
     )
 }
