@@ -95,7 +95,7 @@ const Home = () => {
                                     display: 'flex',
                                     justifyContent: 'center',
                                     alignItems: 'center',
-                                    paddingRight: 5,
+                                    paddingRight: 15,
                                 }}
                             >
                                 <Image
