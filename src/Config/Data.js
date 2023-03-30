@@ -1,3 +1,4 @@
+/*
 import img1 from '../Images/Home-Slider/item1.jpg'
 import img2 from '../Images/Home-Slider/item2.jpg'
 import img3 from '../Images/Home-Slider/item3.jpg'
@@ -25,3 +26,4 @@ export const sliderData = [
         catagory: 'Masala'
     },
 ]
+*/

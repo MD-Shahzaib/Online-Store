@@ -1,38 +1,39 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image, TextInput, FlatList } from 'react-native';
+// Icons.
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-// import img1 from '../Images/Home-Slider/item1.jpg'
-// import img2 from '../Images/Home-Slider/item2.jpg'
-// import img3 from '../Images/Home-Slider/item3.jpg'
-// import img4 from '../Images/Home-Slider/item4.avif'
-
+// Temporary Data Todo(fetch data from API).
 const data = [
     {
-        // image: img1,
-        catagory: 'Fruits'
+        catagory: 'Fruits',
+        desc: 'This is product description sdsafff fffssss sssssss',
+        price: '500',
     },
     {
-        // image: img2,
-        catagory: 'Vegetables'
+        catagory: 'Vegetables',
+        desc: 'This is product description',
+        price: '500',
     },
     {
-        // image: img3,
-        catagory: 'Meat'
+        catagory: 'Meat',
+        desc: 'This is product description',
+        price: '500',
     },
     {
-        // image: img4,
-        catagory: 'Grocery'
+        catagory: 'Grocery',
+        desc: 'This is product description',
+        price: '500',
     },
     {
-        // image: img1,
-        catagory: 'Masala'
+        catagory: 'Masala',
+        desc: 'This is product description',
+        price: '500',
     },
-]
+];
 
 const Home = () => {
-
     return (
         // MAIN-CONTAINER.
         <View style={styles.homeContainer}>
@@ -70,14 +71,14 @@ const Home = () => {
             {/* CATOGERY-SLIDER. */}
             <View
                 style={{
-                    backgroundColor: 'lightblue',
+                    // backgroundColor: '#cecfcf',
                     marginVertical: 10
                 }}
             >
                 <Text
                     style={{
                         fontWeight: 'bold',
-                        color: 'gray',
+                        color: 'black',
                         fontSize: 15
                     }}
                 >
@@ -91,30 +92,30 @@ const Home = () => {
                         return (
                             <View
                                 style={{
-                                    backgroundColor: 'lightgray',
-                                    paddingHorizontal: 5,
-                                    paddingVertical: 5,
                                     display: 'flex',
                                     justifyContent: 'center',
                                     alignItems: 'center',
+                                    paddingRight: 5,
                                 }}
                             >
                                 <Image
                                     source={require('../Images/Home-Slider/item1.jpg')}
                                     style={{
-                                        width: 90,
+                                        width: 80,
                                         height: 50,
                                         borderRadius: 10,
-                                        marginVertical: 5,
-                                        borderColor: 'green',
+                                        marginTop: 5,
+                                        borderColor: '#6cd205',
                                         borderWidth: 2,
                                     }}
                                 />
                                 <Text
                                     style={{
-                                        backgroundColor: 'gray',
-                                        width: 90,
+                                        fontWeight: 'bold',
+                                        fontSize: 12,
+                                        color: '#6cd205',
                                         textAlign: 'center',
+                                        width: 80,
                                     }}
                                 >
                                     {item.catagory}
@@ -126,13 +127,65 @@ const Home = () => {
             </View>
 
             {/* LIST-ITEMS. */}
-            {/* <View style={styles.listItems}>
-                <FlatList
-                // data={DATA}
-                // renderItem={({ item }) => <Item title={item.title} />}
-                // keyExtractor={item => item.id}
-                />
-            </View> */}
+            <View>
+                <FlatList data={data} renderItem={({ item, index }) => {
+                    return (
+                        <View
+                            style={{
+                                display: 'flex',
+                                justifyContent: 'space-between',
+                                alignItems: 'center',
+                                flexDirection: 'row',
+                                marginVertical: 5,
+                            }}>
+                            <Image
+                                source={require('../Images/Home-Slider/item1.jpg')}
+                                style={{
+                                    width: 85,
+                                    height: 60,
+                                    borderRadius: 10,
+                                    marginTop: 5,
+                                    borderColor: '#6cd205',
+                                    borderWidth: 2,
+                                }}
+                            />
+                            <View
+                                style={{
+                                    display: 'flex',
+                                    justifyContent: 'center',
+                                    alignItems: 'center',
+                                    // backgroundColor: 'red',
+                                }}>
+                                <View
+                                    style={{
+                                        display: 'flex',
+                                        flexDirection: 'row',
+                                        justifyContent: 'space-between',
+                                        alignItems: 'center',
+                                        // backgroundColor: 'yellow',
+                                        width: 250,
+                                    }}>
+                                    <Text style={{ fontWeight: 'bold', width: 120, color: 'black', }}>{item.catagory}</Text>
+                                    <Text style={{ fontWeight: 'bold', width: 120, textAlign: 'right', color: 'black', }}>Rs: {item.price} - Per Kg</Text>
+                                </View>
+                                <View
+                                    style={{
+                                        display: 'flex',
+                                        flexDirection: 'row',
+                                        justifyContent: 'space-between',
+                                        alignItems: 'center',
+                                        width: 250,
+                                    }}>
+                                    <Text>{item.desc.slice(0, 32)}..</Text>
+                                    <View style={{ backgroundColor: '#6cd205', paddingHorizontal: 10, paddingVertical: 5, borderRadius: 10 }}>
+                                        <Ionicons name='add' color='white' size={25} />
+                                    </View>
+                                </View>
+                            </View>
+                        </View>
+                    )
+                }} />
+            </View>
 
         </View >
     )
@@ -154,7 +207,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        backgroundColor: '#cecfcf',
+        // backgroundColor: '#cecfcf',
     },
     title: {
         display: 'flex',
@@ -172,4 +225,4 @@ const styles = StyleSheet.create({
         color: '#0c6fa6',
         width: 200,
     },
-})
+});
