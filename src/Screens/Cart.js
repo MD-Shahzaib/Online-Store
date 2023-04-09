@@ -1,7 +1,9 @@
 import React from 'react'
-import { StyleSheet, Text, View, TouchableOpacity, FlatList, Image } from 'react-native'
+import { StyleSheet, Text, View, TouchableOpacity, FlatList, Image, TextInput } from 'react-native'
+// Icons.
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import Fontisto from 'react-native-vector-icons/Fontisto';
 
 // Temporary Data Todo(fetch data from API).
 const data = [
@@ -22,7 +24,7 @@ const data = [
     },
 ];
 
-const Cart = () => {
+const Cart = ({ navigation }) => {
     return (
         <>
             {/* MAIN-CONTAINER. */}
@@ -40,7 +42,7 @@ const Cart = () => {
                 </View>
 
                 {/* LIST-ITEMS. */}
-                <View style={styles.listContainer}>
+                {/* <View style={styles.listContainer}>
                     <FlatList data={data} renderItem={({ item, index }) => {
                         return (
                             <View style={styles.listItem}>
@@ -57,10 +59,40 @@ const Cart = () => {
                                         <Ionicons name='add' color='white' size={20} />
                                     </View>
                                 </View>
-                                <Text style={styles.price}>Rs: {item.price}</Text>
+                                <Text style={styles.price}>&#8360; {item.price}</Text>
                             </View>
                         )
                     }} />
+                </View> */}
+
+                {/* TOTAL-BOX */}
+                <View style={styles.totalBox}>
+                    <Text style={styles.totalText}>Total</Text>
+                    <Text style={styles.totalPrice}>&#8360; 485.00</Text>
+                </View>
+
+                {/* PLACE-ORDER-INPUT */}
+                <View style={styles.inputContainer}>
+                    <View style={styles.inputBox}>
+                        <TextInput placeholder='Full Name' style={styles.input} />
+                        <MaterialIcons name="account-circle" size={30} color="#BAC4C7" style={styles.inputIcon} />
+                    </View>
+                    <View style={styles.inputBox}>
+                        <TextInput placeholder='Email' style={styles.input} />
+                        <Fontisto name="email" size={30} color="#BAC4C7" style={styles.inputIcon} />
+                    </View>
+                    <View style={styles.inputBox}>
+                        <TextInput placeholder='Phone Number' style={styles.input} />
+                        <Fontisto name="phone" size={30} color="#BAC4C7" style={styles.inputIcon} />
+                    </View>
+                    <View style={styles.inputBox}>
+                        <TextInput placeholder='Shipping Address' style={styles.input} />
+                        <Ionicons name="location" size={30} color="#BAC4C7" style={styles.inputIcon} />
+                    </View>
+                    {/* PLACE-ORDER-BUTTON */}
+                    <TouchableOpacity>
+                        <Text style={styles.placeOrder} onPress={() => navigation.navigate('Account')}>Place Order</Text>
+                    </TouchableOpacity>
                 </View>
 
             </View>
@@ -168,4 +200,59 @@ const styles = StyleSheet.create({
         width: 50,
         color: 'black',
     },
+
+    // TOTAL-BOX.
+    totalBox: {
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        flexDirection: 'row',
+        paddingVertical: 5,
+    },
+    totalText: {
+        fontWeight: 'bold',
+        fontSize: 16,
+        color: 'black',
+        width: 100,
+    },
+    totalPrice: {
+        fontWeight: 'bold',
+        fontSize: 16,
+        width: 100,
+        color: '#6cd205',
+        textAlign: 'right'
+    },
+
+    // PLACE-ORDER-INPUT.
+    inputContainer: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#71D69C',
+        marginTop: 5,
+    },
+    inputBox: {
+        backgroundColor: '#44815e',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'row',
+        borderBottomWidth: 2,
+        borderBottomColor: '#BAC4C7',
+        marginBottom: 10,
+        paddingHorizontal: 5,
+    },
+    inputIcon: {
+        paddingHorizontal: 5,
+        backgroundColor: '#7197d6',
+    },
+    input: {
+        flex: 0.9,
+    },
+
+    // PLACE-ORDER-BUTTON.
+    placeOrder: {
+        backgroundColor: 'green',
+        padding: 10,
+    }
 })
