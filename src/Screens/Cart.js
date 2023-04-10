@@ -4,6 +4,7 @@ import { StyleSheet, Text, View, TouchableOpacity, FlatList, Image, TextInput } 
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Fontisto from 'react-native-vector-icons/Fontisto';
+import Zocial from 'react-native-vector-icons/Zocial';
 
 // Temporary Data Todo(fetch data from API).
 const data = [
@@ -42,7 +43,7 @@ const Cart = ({ navigation }) => {
                 </View>
 
                 {/* LIST-ITEMS. */}
-                {/* <View style={styles.listContainer}>
+                <View style={styles.listContainer}>
                     <FlatList data={data} renderItem={({ item, index }) => {
                         return (
                             <View style={styles.listItem}>
@@ -51,19 +52,19 @@ const Cart = ({ navigation }) => {
                                     <Text style={styles.catagory}>{item.catagory}</Text>
                                 </View>
                                 <View style={styles.listItemQuantityBox}>
-                                    <View style={styles.removeQuantity}>
-                                        <Ionicons name='remove' color='white' size={20} />
+                                    <View>
+                                        <Ionicons name='remove' color='#9d9f9f' size={20} />
                                     </View>
                                     <Text style={styles.quantity}>{item.quantity}</Text>
-                                    <View style={styles.addQuantity}>
-                                        <Ionicons name='add' color='white' size={20} />
+                                    <View>
+                                        <Ionicons name='add' color='#9d9f9f' size={20} />
                                     </View>
                                 </View>
                                 <Text style={styles.price}>&#8360; {item.price}</Text>
                             </View>
                         )
                     }} />
-                </View> */}
+                </View>
 
                 {/* TOTAL-BOX */}
                 <View style={styles.totalBox}>
@@ -75,19 +76,19 @@ const Cart = ({ navigation }) => {
                 <View style={styles.inputContainer}>
                     <View style={styles.inputBox}>
                         <TextInput placeholder='Full Name' style={styles.input} />
-                        <MaterialIcons name="account-circle" size={30} color="#BAC4C7" style={styles.inputIcon} />
+                        <MaterialIcons name="account-circle" size={25} color="#BAC4C7" style={styles.inputIcon} />
                     </View>
                     <View style={styles.inputBox}>
                         <TextInput placeholder='Email' style={styles.input} />
-                        <Fontisto name="email" size={30} color="#BAC4C7" style={styles.inputIcon} />
+                        <Fontisto name="email" size={25} color="#BAC4C7" style={styles.inputIcon} />
                     </View>
                     <View style={styles.inputBox}>
                         <TextInput placeholder='Phone Number' style={styles.input} />
-                        <Fontisto name="phone" size={30} color="#BAC4C7" style={styles.inputIcon} />
+                        <Zocial name="call" size={25} color="#BAC4C7" style={styles.inputIcon} />
                     </View>
                     <View style={styles.inputBox}>
                         <TextInput placeholder='Shipping Address' style={styles.input} />
-                        <Ionicons name="location" size={30} color="#BAC4C7" style={styles.inputIcon} />
+                        <Ionicons name="location" size={25} color="#BAC4C7" style={styles.inputIcon} />
                     </View>
                     {/* PLACE-ORDER-BUTTON */}
                     <TouchableOpacity>
@@ -107,7 +108,6 @@ const styles = StyleSheet.create({
     cartBox: {
         flex: 1,
         paddingHorizontal: 10,
-        // backgroundColor: "lightblue",
     },
 
     // TOP-NAV.
@@ -165,9 +165,10 @@ const styles = StyleSheet.create({
     },
     catagory: {
         width: 80,
+        fontWeight: 'bold',
+        fontSize: 12,
         marginLeft: 5,
         color: 'black',
-        fontWeight: 'bold',
     },
     listItemQuantityBox: {
         display: 'flex',
@@ -175,24 +176,15 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
     },
-    removeQuantity: {
-        padding: 2,
-        borderRadius: 5,
-        backgroundColor: 'red',
-    },
     quantity: {
+        width: 30,
+        textAlign: 'center',
+        color: '#6c6e70',
         fontWeight: 'bold',
+        borderRadius: 2,
         marginHorizontal: 5,
         paddingHorizontal: 5,
-        color: 'black',
-        backgroundColor: 'black',
-        color: 'white',
-        borderRadius: 50,
-    },
-    addQuantity: {
-        padding: 2,
-        borderRadius: 5,
-        backgroundColor: '#6cd205',
+        backgroundColor: 'lightgray',
     },
     price: {
         fontSize: 15,
@@ -228,11 +220,9 @@ const styles = StyleSheet.create({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#71D69C',
         marginTop: 5,
     },
     inputBox: {
-        backgroundColor: '#44815e',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
@@ -244,15 +234,23 @@ const styles = StyleSheet.create({
     },
     inputIcon: {
         paddingHorizontal: 5,
-        backgroundColor: '#7197d6',
     },
     input: {
-        flex: 0.9,
+        flex: 1,
+        paddingVertical: 4,
     },
 
     // PLACE-ORDER-BUTTON.
     placeOrder: {
-        backgroundColor: 'green',
+        width: 340,
+        color: 'aliceblue',
         padding: 10,
+        fontSize: 25,
+        fontWeight: 800,
+        borderRadius: 10,
+        textAlign: 'center',
+        backgroundColor: '#6cd205',
+        shadowColor: 'gray',
+        elevation: 3,
     }
-})
+});
