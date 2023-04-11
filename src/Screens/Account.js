@@ -6,20 +6,29 @@ import Feather from 'react-native-vector-icons/Feather';
 // Temporary Data Todo(fetch data from API).
 const data = [
     {
-        catagory: 'Fruits',
-        quantity: 1,
-        price: '500',
+        userName: 'Shahzaib',
+        phoneNumber: '03453453453',
+        productName: 'Fruit',
+        orderDate: 'Just Now',
+        orderStatus: 'Pending',
+        quantity: 3,
     },
     {
-        catagory: 'Vegetables',
+        userName: 'Zohaib',
+        phoneNumber: '03455653453',
+        productName: 'Vegetable',
+        orderDate: '2 feb 2023',
+        orderStatus: 'In Progress',
         quantity: 1,
-        price: '500',
     },
-    {
-        catagory: 'Meat',
-        quantity: 1,
-        price: '500',
-    },
+    // {
+    //     userName: 'Shayan',
+    //     phoneNumber: '02693456213',
+    //     productName: 'Masala',
+    //     orderDate: '24 jan 2023',
+    //     orderStatus: 'Deliverd',
+    //     quantity: 2,
+    // },
 ];
 
 const Account = () => {
@@ -42,24 +51,20 @@ const Account = () => {
 
                 {/* LIST-ITEMS. */}
                 <View style={styles.listContainer}>
-                    <Text>orders</Text>
+                    <Text style={styles.orderHeading}>Orders</Text>
                     <FlatList data={data} renderItem={({ item, index }) => {
                         return (
-                            <View style={styles.listItem}>
-                                <View style={styles.listItemImgBox}>
-                                    <Image source={require('../Images/Home-Slider/item1.jpg')} style={{ width: 50, height: 50, }} />
-                                    <Text style={styles.catagory}>{item.catagory}</Text>
+                            <View style={styles.orderItemBox}>
+                                <Text style={styles.userName}>{item.userName}</Text>
+                                <View style={styles.orderStatusBox}>
+                                    <Text style={styles.status}>{item.orderDate} - {item.orderStatus}</Text>
+                                    <Text style={styles.phoneNumber}>{item.phoneNumber}</Text>
                                 </View>
-                                <View style={styles.listItemQuantityBox}>
-                                    <View>
-                                        {/* <Ionicons name='remove' color='#9d9f9f' size={20} /> */}
-                                    </View>
-                                    <Text style={styles.quantity}>{item.quantity}</Text>
-                                    <View>
-                                        {/* <Ionicons name='add' color='#9d9f9f' size={20} /> */}
-                                    </View>
+                                <Text style={styles.productAndQuantity}>{item.quantity} X {item.productName}</Text>
+                                <View style={styles.totalBox}>
+                                    <Text style={styles.totalText}>Total</Text>
+                                    <Text style={styles.totalPrice}>&#8360; 485.00</Text>
                                 </View>
-                                <Text style={styles.price}>&#8360; {item.price}</Text>
                             </View>
                         )
                     }} />
@@ -86,49 +91,112 @@ const styles = StyleSheet.create({
 
     // PROFILE-BOX.
     profileBox: {
-        backgroundColor: "#c6e7f7",
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
     },
     settings: {
-        color: '#0c6fa6'
+        color: '#0c6fa6',
+        fontSize: 22,
+        fontWeight: '700',
+        width: 150,
+        textAlign: 'center',
+        marginTop: 5,
+        marginBottom: 10,
     },
     profileImgBox: {
-        borderColor: '#6cd205',
-        borderStyle: 'solid',
         borderWidth: 2,
-        borderRadius: 100,
         padding: 10,
+        borderRadius: 100,
+        borderColor: '#6cd205',
     },
     profileImg: {
         width: 100,
         height: 100
     },
     inputBox: {
-        // backgroundColor: '#74a3ba',
+        width: 200,
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'row',
-        borderBottomColor: 'gray',
-        borderBottomWidth: 1,
+        borderBottomColor: '#959799',
+        borderBottomWidth: 1.5,
+        marginVertical: 5,
     },
     inputIcon: {
-        // backgroundColor: '#888cc1',
-        paddingHorizontal: 5,
+        position: 'absolute',
+        right: 10,
     },
     input: {
         paddingHorizontal: 5,
-        // backgroundColor: '#8cc188',
         padding: 1,
     },
 
-    // LOGOUT.
+    // LIST-ITEMS.
+    listContainer: {
+        marginVertical: 15,
+    },
+    orderHeading: {
+        width: 150,
+        fontSize: 18,
+        fontWeight: '700',
+        color: '#0c6fa6',
+        marginVertical: 5,
+    },
+    orderItemBox: {
+        paddingHorizontal: 10,
+        paddingVertical: 5,
+        marginVertical: 5,
+        borderBottomColor: '#959799',
+        borderBottomWidth: 1,
+    },
+    userName: {
+        fontSize: 18,
+        fontWeight: '700'
+    },
+    orderStatusBox: {
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        flexDirection: 'row',
+    },
+    status: {
+        fontSize: 10,
+    },
+    phoneNumber: {
+        fontSize: 10,
+    },
+    productAndQuantity: {
+        fontSize: 12,
+    },
+    totalBox: {
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        flexDirection: 'row',
+    },
+    totalText: {
+        fontSize: 15,
+        fontWeight: '700',
+        width: 50,
+    },
+    totalPrice: {
+        fontSize: 15,
+        fontWeight: '700',
+        width: 100,
+        textAlign: 'right',
+    },
+    // LOGOUT-BUTTON.
     logout: {
-        backgroundColor: 'green',
-        padding: 15,
+        color: 'aliceblue',
+        fontSize: 25,
+        fontWeight: 800,
+        borderRadius: 10,
+        padding: 10,
         textAlign: 'center',
-        color: 'white',
+        backgroundColor: '#6cd205',
+        shadowColor: 'gray',
+        elevation: 3,
     }
 })
