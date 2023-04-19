@@ -1,6 +1,5 @@
 import React from 'react'
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
-
 // React Native vector-icons.
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Feather from 'react-native-vector-icons/Feather';

@@ -1,6 +1,5 @@
 import React from 'react'
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
-
 // React Native vector-icons.
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -20,13 +19,12 @@ const Login = ({ navigation }) => {
                 <View style={styles.inputBox}>
                     <TextInput placeholder='Password' style={styles.input} />
                     <Ionicons name="eye" size={30} color="#BAC4C7" style={styles.inputIcon} />
-                    {/* <Ionicons name="eye-off" size={30} color="#BAC4C7" style={styles.inputIcon} /> */}
                 </View>
-                {/* temporary navigate to BottomNavigation.js onpress forget password */}
-                <Text style={styles.forgotText} onPress={() => navigation.navigate('BottomNavigation')}>Forgot Password?</Text>
+                <Text style={styles.forgotText} onPress={() => alert("Page does not exsist or create")}
+                >Forgot Password?</Text>
             </View>
             <TouchableOpacity>
-                <Text style={styles.startBtn} onPress={() => navigation.navigate('Register')}>Sign In</Text>
+                <Text style={styles.startBtn} onPress={() => navigation.navigate('BottomNavigation')}>Sign In</Text>
                 <Text style={styles.accountText} onPress={() => navigation.navigate('Register')}>Don't have an account? Register</Text>
             </TouchableOpacity>
         </View>
