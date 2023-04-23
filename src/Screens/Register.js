@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
-// React Native vector-icons.
+// Vector-icons.
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Feather from 'react-native-vector-icons/Feather';
 import Fontisto from 'react-native-vector-icons/Fontisto';
@@ -30,7 +30,6 @@ const Register = ({ navigation }) => {
                 <View style={styles.inputBox}>
                     <TextInput placeholder='Password' style={styles.input} />
                     <Ionicons name="eye" size={30} color="#BAC4C7" style={styles.inputIcon} />
-                    {/* <Ionicons name="eye-off" size={30} color="#BAC4C7" style={styles.inputIcon} /> */}
                 </View>
             </View>
             <TouchableOpacity>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image, TextInput, FlatList } from 'react-native';
-// Icons.
+// Vector-icons.
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
@@ -8,7 +8,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 const data = [
     {
         catagory: 'Fruits',
-        desc: 'This is product description sdsafff fffssss sssssss',
+        desc: 'This is product description',
         price: '500',
     },
     {
@@ -45,21 +45,17 @@ const Home = () => {
                     <Text style={styles.text2}>ONLINE DISCOUNT STORE</Text>
                 </View>
                 <TouchableOpacity>
-                    <MaterialIcons
-                        name="shopping-cart"
-                        color="black"
-                        size={25}
-                    />
+                    <MaterialIcons name="shopping-cart" color="black" size={25} />
                 </TouchableOpacity>
             </View>
 
             {/* IMAGE-BOX. */}
-            <View style={{ marginVertical: 10 }}>
-                <Image source={require("../Images/homeImage.jpg")} style={{ width: 340, height: 200, borderRadius: 10 }} />
+            <View style={styles.homeBannerBox} >
+                <Image source={require("../Images/homeImage.jpg")} style={styles.homeBanner} />
             </View>
 
             {/* SEARCH-INPUT. */}
-            <View style={{ backgroundColor: '#cecfcf', borderRadius: 50, display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'row', height: 40, }}>
+            <View style={styles.inputBox}>
                 <Ionicons name="search" size={30} color="gray" />
                 <TextInput
                     style={{ marginLeft: 10, marginRight: 10, width: 270 }}
@@ -198,7 +194,6 @@ const styles = StyleSheet.create({
     homeContainer: {
         flex: 1,
         paddingHorizontal: 10,
-        // backgroundColor: '#e7e7e7',
     },
 
     // TOP-NAV.
@@ -207,7 +202,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        // backgroundColor: '#cecfcf',
     },
     title: {
         display: 'flex',
@@ -225,4 +219,26 @@ const styles = StyleSheet.create({
         color: '#0c6fa6',
         width: 200,
     },
+    homeBannerBox: {
+        marginVertical: 10,
+    },
+    homeBanner: {
+        width: 340,
+        height: 200,
+        borderRadius: 10,
+    },
+    inputBox: {
+        backgroundColor: '#cecfcf',
+        borderRadius: 50,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'row',
+        height: 40,
+    },
+
 });
+
+
+
+// (HOME, CART, ACCOUNT) KE CODE KO CLEAN KARNA H PHR DATA KA EK FILE BANAKAR EXPORT KARKE ISTEMAL KARNA H. THEN ADMIN SCREENS CREATE KARNA H THEN US KA FUNCTIONALITY PAR KAM KARNA H. 

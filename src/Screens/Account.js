@@ -1,6 +1,6 @@
 import React from 'react'
 import { FlatList, Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
-// Icons.
+// Vector-icons.
 import Feather from 'react-native-vector-icons/Feather';
 
 // Temporary Data Todo(fetch data from API).
