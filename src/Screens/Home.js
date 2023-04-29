@@ -58,64 +58,24 @@ const Home = () => {
             <View style={styles.inputBox}>
                 <Ionicons name="search" size={30} color="gray" />
                 <TextInput
-                    style={{ marginLeft: 10, marginRight: 10, width: 270 }}
+                    style={styles.homeSearchInput}
                     placeholder="Search by product name"
                     keyboardType="default"
                 />
             </View>
 
             {/* CATOGERY-SLIDER. */}
-            <View
-                style={{
-                    // backgroundColor: '#cecfcf',
-                    marginVertical: 10
-                }}
-            >
-                <Text
-                    style={{
-                        fontWeight: 'bold',
-                        color: 'black',
-                        fontSize: 15
-                    }}
-                >
-                    Shop by Category
-                </Text>
+            <View style={styles.catogerySliderContainer}>
+                <Text style={styles.catogerySliderHeading}>Shop by Category</Text>
                 <FlatList
                     data={data}
                     horizontal={true}
                     showsHorizontalScrollIndicator={false}
                     renderItem={({ item, index }) => {
                         return (
-                            <View
-                                style={{
-                                    display: 'flex',
-                                    justifyContent: 'center',
-                                    alignItems: 'center',
-                                    paddingRight: 15,
-                                }}
-                            >
-                                <Image
-                                    source={require('../Images/Home-Slider/item1.jpg')}
-                                    style={{
-                                        width: 80,
-                                        height: 50,
-                                        borderRadius: 10,
-                                        marginTop: 5,
-                                        borderColor: '#6cd205',
-                                        borderWidth: 2,
-                                    }}
-                                />
-                                <Text
-                                    style={{
-                                        fontWeight: 'bold',
-                                        fontSize: 12,
-                                        color: '#6cd205',
-                                        textAlign: 'center',
-                                        width: 80,
-                                    }}
-                                >
-                                    {item.catagory}
-                                </Text>
+                            <View style={styles.csliderItemBox}>
+                                <Image style={styles.csliderItemImage} source={require('../Images/Home-Slider/item1.jpg')} />
+                                <Text style={styles.csliderItemTitle}>{item.catagory}</Text>
                             </View>
                         )
                     }}
@@ -126,54 +86,16 @@ const Home = () => {
             <View>
                 <FlatList data={data} renderItem={({ item, index }) => {
                     return (
-                        <View
-                            style={{
-                                display: 'flex',
-                                justifyContent: 'space-between',
-                                alignItems: 'center',
-                                flexDirection: 'row',
-                                marginVertical: 5,
-                            }}>
-                            <Image
-                                source={require('../Images/Home-Slider/item1.jpg')}
-                                style={{
-                                    width: 85,
-                                    height: 60,
-                                    borderRadius: 10,
-                                    marginTop: 5,
-                                    borderColor: '#6cd205',
-                                    borderWidth: 2,
-                                }}
-                            />
-                            <View
-                                style={{
-                                    display: 'flex',
-                                    justifyContent: 'center',
-                                    alignItems: 'center',
-                                    // backgroundColor: 'red',
-                                }}>
-                                <View
-                                    style={{
-                                        display: 'flex',
-                                        flexDirection: 'row',
-                                        justifyContent: 'space-between',
-                                        alignItems: 'center',
-                                        // backgroundColor: 'yellow',
-                                        width: 250,
-                                    }}>
-                                    <Text style={{ fontWeight: 'bold', width: 120, color: 'black', }}>{item.catagory}</Text>
-                                    <Text style={{ fontWeight: 'bold', width: 120, textAlign: 'right', color: 'black', }}>Rs: {item.price} - Per Kg</Text>
+                        <View style={styles.shopItemBox}>
+                            <Image source={require('../Images/Home-Slider/item1.jpg')} style={styles.shopItemImage} />
+                            <View style={styles.shopItemTextBox}>
+                                <View style={styles.shopItemTextBoxTop}>
+                                    <Text style={styles.shopItemTextBoxTitle}>{item.catagory}</Text>
+                                    <Text style={styles.shopItemTextBoxPrice}>Rs: {item.price} - Per Kg</Text>
                                 </View>
-                                <View
-                                    style={{
-                                        display: 'flex',
-                                        flexDirection: 'row',
-                                        justifyContent: 'space-between',
-                                        alignItems: 'center',
-                                        width: 250,
-                                    }}>
+                                <View style={styles.shopItemTextBoxbottom}>
                                     <Text>{item.desc.slice(0, 32)}..</Text>
-                                    <View style={{ backgroundColor: '#6cd205', paddingHorizontal: 10, paddingVertical: 5, borderRadius: 10 }}>
+                                    <View style={shopItemTextBoxbottomIcon}>
                                         <Ionicons name='add' color='white' size={25} />
                                     </View>
                                 </View>
@@ -235,6 +157,94 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         flexDirection: 'row',
         height: 40,
+    },
+    homeSearchInput: {
+        marginLeft: 10,
+        marginRight: 10,
+        width: 270,
+    },
+    catogerySliderContainer: {
+        // backgroundColor: '#cecfcf',
+        marginVertical: 10
+    },
+    catogerySliderHeading: {
+        fontWeight: 'bold',
+        color: 'black',
+        fontSize: 15,
+    },
+    csliderItemBox: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingRight: 15,
+    },
+    csliderItemImage: {
+        width: 80,
+        height: 50,
+        borderRadius: 10,
+        marginTop: 5,
+        borderColor: '#6cd205',
+        borderWidth: 2,
+    },
+    csliderItemTitle: {
+        fontWeight: 'bold',
+        fontSize: 12,
+        color: '#6cd205',
+        textAlign: 'center',
+        width: 80,
+    },
+    shopItemBox: {
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        flexDirection: 'row',
+        marginVertical: 5,
+    },
+    shopItemImage: {
+        width: 85,
+        height: 60,
+        borderRadius: 10,
+        marginTop: 5,
+        borderColor: '#6cd205',
+        borderWidth: 2,
+    },
+    shopItemTextBox: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        // backgroundColor: 'red',
+    },
+    shopItemTextBoxTop: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        width: 250,
+        // backgroundColor: 'yellow',
+    },
+    shopItemTextBoxTitle: {
+        fontWeight: 'bold',
+        width: 120,
+        color: 'black',
+    },
+    shopItemTextBoxPrice: {
+        fontWeight: 'bold',
+        width: 120,
+        textAlign: 'right',
+        color: 'black',
+    },
+    shopItemTextBoxbottom: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        width: 250,
+    },
+    shopItemTextBoxbottomIcon: {
+        backgroundColor: '#6cd205',
+        paddingHorizontal: 10,
+        paddingVertical: 5,
+        borderRadius: 10,
     },
 
 });
