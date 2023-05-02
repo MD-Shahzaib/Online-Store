@@ -6,26 +6,27 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import Zocial from 'react-native-vector-icons/Zocial';
 
-// Temporary Data Todo(fetch data from API).
-const data = [
-    {
-        catagory: 'Fruits',
-        quantity: 1,
-        price: '500',
-    },
-    {
-        catagory: 'Vegetables',
-        quantity: 1,
-        price: '500',
-    },
-    {
-        catagory: 'Meat',
-        quantity: 1,
-        price: '500',
-    },
-];
-
 const Cart = ({ navigation }) => {
+
+    // Temporary Data Todo(fetch data from API).
+    const data = [
+        {
+            catagory: 'Fruits',
+            quantity: 1,
+            price: '500',
+        },
+        {
+            catagory: 'Vegetables',
+            quantity: 1,
+            price: '500',
+        },
+        {
+            catagory: 'Meat',
+            quantity: 1,
+            price: '500',
+        },
+    ];
+
     return (
         <>
             {/* MAIN-CONTAINER. */}

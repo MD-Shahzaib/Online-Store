@@ -6,7 +6,6 @@ import Feather from 'react-native-vector-icons/Feather';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-
 const Register = ({ navigation }) => {
     return (
         <View style={styles.mainConatiner} >
@@ -33,7 +32,7 @@ const Register = ({ navigation }) => {
                 </View>
             </View>
             <TouchableOpacity>
-                <Text style={styles.startBtn} onPress={() => navigation.navigate('Login')}>Sign Up</Text>
+                <Text style={styles.startBtn} onPress={() => navigation.navigate('BottomNavigation')}>Sign Up</Text>
                 <Text style={styles.accountText} onPress={() => navigation.navigate('Login')}>Already have an account? Login</Text>
             </TouchableOpacity>
         </View>

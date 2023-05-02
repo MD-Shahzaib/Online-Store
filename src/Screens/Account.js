@@ -3,35 +3,28 @@ import { FlatList, Image, StyleSheet, Text, TextInput, TouchableOpacity, View } 
 // Vector-icons.
 import Feather from 'react-native-vector-icons/Feather';
 
-// Temporary Data Todo(fetch data from API).
-const data = [
-    {
-        userName: 'Shahzaib',
-        phoneNumber: '03453453453',
-        productName: 'Fruit',
-        orderDate: 'Just Now',
-        orderStatus: 'Pending',
-        quantity: 3,
-    },
-    {
-        userName: 'Zohaib',
-        phoneNumber: '03455653453',
-        productName: 'Vegetable',
-        orderDate: '2 feb 2023',
-        orderStatus: 'In Progress',
-        quantity: 1,
-    },
-    // {
-    //     userName: 'Shayan',
-    //     phoneNumber: '02693456213',
-    //     productName: 'Masala',
-    //     orderDate: '24 jan 2023',
-    //     orderStatus: 'Deliverd',
-    //     quantity: 2,
-    // },
-];
-
 const Account = () => {
+
+    // Temporary Data, Todo(fetch data from API).
+    const data = [
+        {
+            userName: 'Shahzaib',
+            phoneNumber: '03453453453',
+            productName: 'Fruit',
+            orderDate: 'Just Now',
+            orderStatus: 'Pending',
+            quantity: 3,
+        },
+        {
+            userName: 'Zohaib',
+            phoneNumber: '03455653453',
+            productName: 'Vegetable',
+            orderDate: '2 feb 2023',
+            orderStatus: 'In Progress',
+            quantity: 1,
+        },
+    ];
+
     return (
         <>
             {/* MAIN-CONTAINER */}
@@ -72,7 +65,7 @@ const Account = () => {
 
                 {/* LOGOUT-BUTTON */}
                 <TouchableOpacity>
-                    <Text style={styles.logout}>Logout</Text>
+                    <Text style={styles.logout} onPress={() => alert('logout alert')}>Logout</Text>
                 </TouchableOpacity>
 
             </View>

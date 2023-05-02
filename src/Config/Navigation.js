@@ -6,7 +6,6 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Splash from "../Screens/Splash";
 import Register from "../Screens/Register";
 import Login from "../Screens/Login";
-import Home from "../Screens/Home";
 import BottomNavigation from "./BottomNavigation";
 
 // Methods.
@@ -20,11 +19,6 @@ const Navigation = () => {
                     <Stack.Screen
                         name='Splash'
                         component={Splash}
-                        options={{ headerShown: false }}
-                    />
-                    <Stack.Screen
-                        name='Home'
-                        component={Home}
                         options={{ headerShown: false }}
                     />
                     <Stack.Screen

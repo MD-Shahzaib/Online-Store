@@ -4,36 +4,37 @@ import { View, Text, StyleSheet, TouchableOpacity, Image, TextInput, FlatList } 
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-// Temporary Data Todo(fetch data from API).
-const data = [
-    {
-        catagory: 'Fruits',
-        desc: 'This is product description',
-        price: '500',
-    },
-    {
-        catagory: 'Vegetables',
-        desc: 'This is product description',
-        price: '500',
-    },
-    {
-        catagory: 'Meat',
-        desc: 'This is product description',
-        price: '500',
-    },
-    {
-        catagory: 'Grocery',
-        desc: 'This is product description',
-        price: '500',
-    },
-    {
-        catagory: 'Masala',
-        desc: 'This is product description',
-        price: '500',
-    },
-];
+const Home = ({ navigation }) => {
 
-const Home = () => {
+    // Temporary Data Todo(fetch data from API).
+    const data = [
+        {
+            catagory: 'Fruits',
+            desc: 'This is product description',
+            price: '500',
+        },
+        {
+            catagory: 'Vegetables',
+            desc: 'This is product description',
+            price: '500',
+        },
+        {
+            catagory: 'Meat',
+            desc: 'This is product description',
+            price: '500',
+        },
+        {
+            catagory: 'Grocery',
+            desc: 'This is product description',
+            price: '500',
+        },
+        {
+            catagory: 'Masala',
+            desc: 'This is product description',
+            price: '500',
+        },
+    ];
+
     return (
         // MAIN-CONTAINER.
         <View style={styles.homeContainer}>
@@ -44,7 +45,7 @@ const Home = () => {
                     <Text style={styles.text1}>SAYLANI WELFARE</Text>
                     <Text style={styles.text2}>ONLINE DISCOUNT STORE</Text>
                 </View>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('Cart')}>
                     <MaterialIcons name="shopping-cart" color="black" size={25} />
                 </TouchableOpacity>
             </View>
@@ -95,7 +96,7 @@ const Home = () => {
                                 </View>
                                 <View style={styles.shopItemTextBoxbottom}>
                                     <Text>{item.desc.slice(0, 32)}..</Text>
-                                    <View style={shopItemTextBoxbottomIcon}>
+                                    <View style={styles.shopItemTextBoxbottomIcon}>
                                         <Ionicons name='add' color='white' size={25} />
                                     </View>
                                 </View>
@@ -112,13 +113,10 @@ const Home = () => {
 export default Home;
 
 const styles = StyleSheet.create({
-    // MAIN-CONTAINER.
     homeContainer: {
         flex: 1,
         paddingHorizontal: 10,
     },
-
-    // TOP-NAV.
     topNav: {
         display: 'flex',
         flexDirection: 'row',
@@ -248,7 +246,3 @@ const styles = StyleSheet.create({
     },
 
 });
-
-
-
-// (HOME, CART, ACCOUNT) KE CODE KO CLEAN KARNA H PHR DATA KA EK FILE BANAKAR EXPORT KARKE ISTEMAL KARNA H. THEN ADMIN SCREENS CREATE KARNA H THEN US KA FUNCTIONALITY PAR KAM KARNA H. 
