@@ -4,37 +4,38 @@ import { View, Text, StyleSheet, TouchableOpacity, Image, TextInput, FlatList } 
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
+// 1) global-Data (grab all_data and access to over the application).
+import All_Data from '../Config/TemporaryData';
+// 2) local-Data.
+const data = [
+    {
+        catagory: 'Fruits',
+        desc: 'This is product description',
+        price: '500',
+    },
+    {
+        catagory: 'Vegetables',
+        desc: 'This is product description',
+        price: '500',
+    },
+    {
+        catagory: 'Meat',
+        desc: 'This is product description',
+        price: '500',
+    },
+    {
+        catagory: 'Grocery',
+        desc: 'This is product description',
+        price: '500',
+    },
+    {
+        catagory: 'Masala',
+        desc: 'This is product description',
+        price: '500',
+    },
+];
+
 const Home = ({ navigation }) => {
-
-    // Temporary Data Todo(fetch data from API).
-    const data = [
-        {
-            catagory: 'Fruits',
-            desc: 'This is product description',
-            price: '500',
-        },
-        {
-            catagory: 'Vegetables',
-            desc: 'This is product description',
-            price: '500',
-        },
-        {
-            catagory: 'Meat',
-            desc: 'This is product description',
-            price: '500',
-        },
-        {
-            catagory: 'Grocery',
-            desc: 'This is product description',
-            price: '500',
-        },
-        {
-            catagory: 'Masala',
-            desc: 'This is product description',
-            price: '500',
-        },
-    ];
-
     return (
         // MAIN-CONTAINER.
         <View style={styles.homeContainer}>
