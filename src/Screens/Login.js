@@ -24,7 +24,7 @@ const Login = ({ navigation }) => {
                 >Forgot Password?</Text>
             </View>
             <TouchableOpacity>
-                <Text style={styles.startBtn} onPress={() => navigation.navigate('BottomNavigation')}>Sign In</Text>
+                <Text style={styles.startBtn} onPress={() => navigation.navigate('AdminBottomNavigation')}>Sign In</Text>
                 <Text style={styles.accountText} onPress={() => navigation.navigate('Register')}>Don't have an account? Register</Text>
             </TouchableOpacity>
         </View>

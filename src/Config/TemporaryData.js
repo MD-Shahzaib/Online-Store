@@ -1,4 +1,4 @@
-// currently not used this file anywhere all over application.
+// currently not used this file anywhere in codebase.
 
 // Temporary Data Todo(fetch data from API).
 const All_Data = {
