@@ -13,7 +13,7 @@ export default App;
 
 
 /*
-(==================> Project Structure <==================)
+(==================> Project Structure (Here ALL application details) <==================)
 
 (1) All_Screens.
 
@@ -49,5 +49,5 @@ _____________________________________________.
 3 - If User already register so goto (login) screen have inputs user fill the information and click on "Sign In" button then goto the (Home) screen after Login success. [Note: On current situation after the click on "Sign Up" button user navigate to "AdminBottomNavigation.js" means (AdminHome) screen].
 _____________________________________________.
 
-(==================> Project Structure <==================)
+(==================> Project Structure (Here ALL application details) <==================)
 */

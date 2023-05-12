@@ -4,9 +4,8 @@ import { View, Text, StyleSheet, TouchableOpacity, Image, TextInput, FlatList } 
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-// 1) global-Data (grab all_data and access to over the application).
-import All_Data from '../Config/TemporaryData';
-// 2) local-Data.
+
+// ) Temporary-Data.
 const data = [
     {
         catagory: 'Fruits',
