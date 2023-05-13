@@ -1,9 +1,7 @@
 import { Image, StyleSheet, Text, View, FlatList, TouchableOpacity } from 'react-native'
 import React from 'react'
-
 // Icons.
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
-
 // Dummy-Data (todo fetch from api).
 const data = [
     {
