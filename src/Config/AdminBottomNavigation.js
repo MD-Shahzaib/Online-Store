@@ -1,19 +1,20 @@
 // Bottom-Tab-Navigator.
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-// Icons.
+// Vector-Icons.
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
-// Components.
+// Screens.
 import AdminHome from "../Screens/AdminHome";
 import AdminAddItem from "../Screens/AdminAddItem";
 import AdminAccount from "../Screens/AdminAccount";
 import AdminOrders from "../Screens/AdminOrders";
 
-// Methods.
-const Tab = createBottomTabNavigator();
-
 const AdminBottomNavigation = () => {
+
+    // Methods.
+    const Tab = createBottomTabNavigator();
+
     return (
         <Tab.Navigator>
             <Tab.Screen

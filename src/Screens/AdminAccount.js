@@ -1,72 +1,76 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import React from 'react';
-// Icons.
+import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput, FlatList } from 'react-native';
+// Vector-Icons.
+import Feather from 'react-native-vector-icons/Feather';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
-const AdminAccount = ({ navigation }) => {
+const AdminAccount = () => {
+
+    // Temporary Data, Todo(fetch data from API).
+    const data = [
+        {
+            productName: "Apple",
+        },
+        {
+            productName: "Apple",
+        },
+    ]
+
     return (
         <>
-            {/* Header */}
-            <View style={styles.headerContainer}>
-                <View style={styles.leftBox}>
+            {/* MAIN-CONTAINER */}
+            <View style={styles.accountContainer}>
+
+                {/* PROFILE-BOX */}
+                <View style={styles.profileBox}>
+                    <Text style={styles.settings}>Settings</Text>
                     <View style={styles.profileImgBox}>
                         <Image
                             source={require('../Images/profilePhoto.png')}
                             style={styles.profileImg}
                         />
                     </View>
-                    <View style={styles.textBox}>
-                        <Text style={styles.leftBoxTextTop}>Mr Ahmed</Text>
-                        <Text style={styles.leftBoxTextbottom}>Admin</Text>
+                    <View style={styles.inputBox}>
+                        <TextInput placeholder='Update Full Name' style={styles.input} />
+                        <Feather name="check" size={25} color="#8cc188" style={styles.inputIcon} />
                     </View>
                 </View>
-                <TouchableOpacity onPress={() => { navigation.navigate('AdminOrders') }}>
-                    <MaterialIcons name="list-alt" color="black" size={40} />
+
+                {/* INPUT-BOX */}
+                <View style={styles.inputContainer}>
+                    <View style={styles.inputProductImg}>
+                        <MaterialIcons name="camera-alt" color="gray" size={40} />
+                    </View>
+                    <View style={styles.inputProductName}>
+                        <TextInput style={styles.inputName} placeholder="Item Name" />
+                        <TouchableOpacity >
+                            <Text style={styles.addBtn}>ADD</Text>
+                        </TouchableOpacity>
+                    </View>
+                </View>
+
+                {/* All-Products-Container */}
+                <View style={styles.allProductsContainer}>
+                    <Text style={styles.heading}>All Categories</Text>
+                    <FlatList data={data} renderItem={({ item, index }) => {
+                        return (
+                            <View style={styles.productsContainer}>
+                                <Image
+                                    source={require("../Images/orange.jpg")}
+                                    style={styles.productImage}
+                                />
+                                <Text style={styles.productName}>{item.productName}</Text>
+                            </View>
+                        )
+                    }} />
+                </View >
+
+                {/* LOGOUT-BUTTON */}
+                <TouchableOpacity>
+                    <Text style={styles.logout} onPress={() => alert('logout alert')}>Logout</Text>
                 </TouchableOpacity>
-            </View>
-            {/* PROFILE-BOX */}
-            <View style={styles.profileBox}>
-                <Text style={styles.settings}>Settings</Text>
-                <View style={styles.profileImgBox}>
-                    <Image source={require('../Images/profilePhoto.png')} style={styles.profileImg} />
-                </View>
-                <View style={styles.inputBox}>
-                    <TextInput placeholder='Update Full Name' style={styles.input} />
-                    <Feather name="check" size={25} color="#8cc188" style={styles.inputIcon} />
-                </View>
-            </View>
-            <View>
-                <TextInput style={styles.input} placeholder="Camera-Icon" />
-            </View>
-            <View>
-                <TextInput style={styles.input} placeholder="Item Name" />
-            </View>
 
-            {/* LIST-ITEMS. */}
-            <View style={styles.listContainer}>
-                <Text style={styles.orderHeading}>Orders</Text>
-                <FlatList data={data} renderItem={({ item, index }) => {
-                    return (
-                        <View style={styles.orderItemBox}>
-                            <Text style={styles.userName}>{item.userName}</Text>
-                            <View style={styles.orderStatusBox}>
-                                <Text style={styles.status}>{item.orderDate} - {item.orderStatus}</Text>
-                                <Text style={styles.phoneNumber}>{item.phoneNumber}</Text>
-                            </View>
-                            <Text style={styles.productAndQuantity}>{item.quantity} X {item.productName}</Text>
-                            <View style={styles.totalBox}>
-                                <Text style={styles.totalText}>Total</Text>
-                                <Text style={styles.totalPrice}>&#8360; 485.00</Text>
-                            </View>
-                        </View>
-                    )
-                }} />
-            </View>
-
-            {/* LOGOUT-BUTTON */}
-            <TouchableOpacity>
-                <Text style={styles.logout} onPress={() => alert('logout alert')}>Logout</Text>
-            </TouchableOpacity>
+            </View >
         </>
     )
 }
@@ -74,45 +78,145 @@ const AdminAccount = ({ navigation }) => {
 export default AdminAccount;
 
 const styles = StyleSheet.create({
-    // Header.
-    headerContainer: {
+    // MAIN-CONTAINER.
+    accountContainer: {
+        flex: 1,
+        paddingHorizontal: 10,
+    },
+
+    // PROFILE-BOX.
+    profileBox: {
         display: 'flex',
-        justifyContent: 'space-between',
-        flexDirection: 'row',
+        justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'white',
-        borderBottomWidth: 2,
-        borderColor: 'lightgray',
-        padding: 5
     },
-    leftBox: {
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        width: 170,
-    },
-    textBox: {
-        width: 100,
-    },
-    leftBoxTextTop: {
-        color: "#024F9D",
-        fontSize: 20,
+    settings: {
+        color: '#024F9D',
+        fontSize: 22,
         fontWeight: '700',
-    },
-    leftBoxTextbottom: {
-        color: "#61B846",
-        fontSize: 20,
-        fontWeight: '700',
+        width: "50%",
+        textAlign: 'center',
+        marginTop: 5,
+        marginBottom: 10,
     },
     profileImgBox: {
         borderWidth: 2,
-        borderColor: "#61B846",
-        borderRadius: 50,
-        padding: 5
+        padding: 10,
+        borderRadius: 100,
+        borderColor: '#6cd205',
     },
     profileImg: {
-        width: 50,
-        height: 50,
+        width: 100,
+        height: 100
     },
-})
+    inputBox: {
+        width: "60%",
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'row',
+        borderBottomColor: '#959799',
+        borderBottomWidth: 1,
+        marginVertical: 5,
+    },
+    inputIcon: {
+        position: 'absolute',
+        right: 5,
+    },
+    input: {
+        padding: 1,
+    },
+
+    // INPUT-BOX.
+    inputContainer: {
+        display: 'flex',
+        alignItems: 'center',
+        paddingTop: 10,
+    },
+    inputProductImg: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#D9D9D9',
+        borderRadius: 10,
+        width: "80%",
+        height: 70,
+    },
+    inputProductName: {
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        flexDirection: 'row',
+        width: "80%",
+        marginVertical: 10,
+    },
+    inputName: {
+        paddingHorizontal: 10,
+        paddingVertical: 7,
+        borderRadius: 10,
+        backgroundColor: '#D9D9D9',
+        width: "70%",
+    },
+    addBtn: {
+        backgroundColor: "#61B846",
+        paddingVertical: 10,
+        textAlign: 'center',
+        paddingHorizontal: 15,
+        borderRadius: 10,
+        color: "white",
+        fontSize: 15,
+        fontWeight: '700',
+    },
+
+    // All-Categories-Container
+    allProductsContainer: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    heading: {
+        fontSize: 22,
+        fontWeight: '700',
+        color: "#024F9D",
+        width: "80%",
+        marginBottom: 10,
+    },
+    productsContainer: {
+        display: 'flex',
+        alignItems: 'center',
+        flexDirection: 'row',
+        borderColor: "#61B846",
+        borderWidth: 2,
+        borderRadius: 15,
+        overflow: 'hidden',
+        backgroundColor: "white",
+        shadowColor: 'gray',
+        elevation: 4,
+        width: 270,
+        marginBottom: 10,
+    },
+    productImage: {
+        width: 50,
+        height: 40,
+        marginHorizontal: 10
+    },
+    productName: {
+        color: "#61B846",
+        fontSize: 18,
+        fontWeight: '700',
+        width: "50%",
+    },
+
+    // LOGOUT-BUTTON.
+    logout: {
+        color: 'aliceblue',
+        fontSize: 25,
+        fontWeight: 800,
+        borderRadius: 10,
+        padding: 10,
+        textAlign: 'center',
+        backgroundColor: '#61B846',
+        shadowColor: 'gray',
+        elevation: 3,
+    }
+});

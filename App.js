@@ -10,14 +10,12 @@ const App = () => {
 
 export default App;
 
-
-
 /*
 (==================> Project Structure (Here ALL application details) <==================)
 
 (1) All_Screens.
 
-  i-  User_Screens
+  i-  [User_Screens]
         1 - Splash.js
         2 - Register.js
         3 - Login.js
@@ -25,7 +23,7 @@ export default App;
         5 - Cart.js
         6 - Account.js
 
-  ii- Admin_Screens
+  ii- [Admin_Screens]
         7 - AdminHome.js
         8 - AdminAddItem.js
         9 - AdminAccount.js
@@ -34,7 +32,7 @@ _____________________________________________.
 
 (2) Configration.
 
-  i-  All_Navigation
+  i-  [All_Navigation]
         1 - Navigation.js
         2 - AdminBottomNavigation.js
         3 - BottomNavigation.js

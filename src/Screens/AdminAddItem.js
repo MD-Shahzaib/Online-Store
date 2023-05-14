@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput } from 'react-native';
 import React from 'react';
-// Icons.
+// Vector-Icons.
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 const AdminAddItem = ({ navigation }) => {
@@ -108,16 +108,14 @@ const styles = StyleSheet.create({
   // All-Products-Container.
   allProductsContainer: {
     display: 'flex',
-    justifyContent: 'center',
     alignItems: 'center',
-    // backgroundColor: "lightblue",
   },
   apcHeading: {
     fontSize: 22,
     fontWeight: '700',
     color: "#024F9D",
     width: "95%",
-    marginVertical: 5,
+    marginVertical: 10,
   },
   inputProductImg: {
     display: 'flex',
@@ -186,22 +184,23 @@ const styles = StyleSheet.create({
     width: "40%",
   },
   unitPlaceholder: {
-    backgroundColor: "lightgray",
-    borderRadius: 20,
-    padding: 10,
     width: "50%",
+    borderRadius: 20,
+    paddingVertical: 5,
+    paddingHorizontal: 15,
     textAlign: 'center',
+    backgroundColor: "lightgray",
   },
   addProductBtn: {
-    backgroundColor: "#61B846",
     width: 250,
-    textAlign: 'center',
-    paddingVertical: 15,
-    borderRadius: 20,
     color: "white",
     fontSize: 23,
     fontWeight: '700',
+    textAlign: 'center',
+    paddingVertical: 10,
+    borderRadius: 15,
     shadowColor: '#1D2429',
     elevation: 5,
+    backgroundColor: "#61B846",
   },
 });

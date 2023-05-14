@@ -1,132 +1,114 @@
 import { Image, StyleSheet, Text, View, FlatList, TouchableOpacity } from 'react-native'
 import React from 'react'
-// Icons.
+// Vector-Icons.
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
-// Dummy-Data (todo fetch from api).
-const data = [
-    {
-        // productImg: require('../Images/Home-Slider/mango.jpg'),
-        productName: "Mango",
-        productPrice: "$25",
-        productUnit: "1.kg",
-    },
-    {
-        // productImg: require('../Images/Home-Slider/apple.jpg'),
-        productName: "Apple",
-        productPrice: "$25",
-        productUnit: "1.kg",
-    },
-    {
-        // productImg: require('../Images/Home-Slider/orange.jpg'),
-        productName: "Orange",
-        productPrice: "$25",
-        productUnit: "1.kg",
-    },
-    {
-        // productImg: require('../Images/Home-Slider/strawberry.jpg'),
-        productName: "Strawberry",
-        productPrice: "$25",
-        productUnit: "1.kg",
-    },
-    {
-        // productImg: require('../Images/Home-Slider/banana.jpg'),
-        productName: "Banana",
-        productPrice: "$25",
-        productUnit: "1.kg",
-    },
-    {
-        // productImg: require('../Images/Home-Slider/mango.jpg'),
-        productName: "Mango",
-        productPrice: "$25",
-        productUnit: "1.kg",
-    },
-    {
-        // productImg: require('../Images/Home-Slider/apple.jpg'),
-        productName: "Apple",
-        productPrice: "$25",
-        productUnit: "1.kg",
-    },
-    {
-        // productImg: require('../Images/Home-Slider/orange.jpg'),
-        productName: "Orange",
-        productPrice: "$25",
-        productUnit: "1.kg",
-    },
-    {
-        // productImg: require('../Images/Home-Slider/strawberry.jpg'),
-        productName: "Strawberry",
-        productPrice: "$25",
-        productUnit: "1.kg",
-    },
-    {
-        // productImg: require('../Images/Home-Slider/banana.jpg'),
-        productName: "Banana",
-        productPrice: "$25",
-        productUnit: "1.kg",
-    },
-    {
-        // productImg: require('../Images/Home-Slider/mango.jpg'),
-        productName: "Mango",
-        productPrice: "$25",
-        productUnit: "1.kg",
-    },
-    {
-        // productImg: require('../Images/Home-Slider/apple.jpg'),
-        productName: "Apple",
-        productPrice: "$25",
-        productUnit: "1.kg",
-    },
-    {
-        // productImg: require('../Images/Home-Slider/orange.jpg'),
-        productName: "Orange",
-        productPrice: "$25",
-        productUnit: "1.kg",
-    },
-    {
-        // productImg: require('../Images/Home-Slider/strawberry.jpg'),
-        productName: "Strawberry",
-        productPrice: "$25",
-        productUnit: "1.kg",
-    },
-    {
-        // productImg: require('../Images/Home-Slider/banana.jpg'),
-        productName: "Banana",
-        productPrice: "$25",
-        productUnit: "1.kg",
-    },
-    {
-        // productImg: require('../Images/Home-Slider/mango.jpg'),
-        productName: "Mango",
-        productPrice: "$25",
-        productUnit: "1.kg",
-    },
-    {
-        // productImg: require('../Images/Home-Slider/apple.jpg'),
-        productName: "Apple",
-        productPrice: "$25",
-        productUnit: "1.kg",
-    },
-    {
-        // productImg: require('../Images/Home-Slider/orange.jpg'),
-        productName: "Orange",
-        productPrice: "$25",
-        productUnit: "1.kg",
-    },
-    {
-        // productImg: require('../Images/Home-Slider/strawberry.jpg'),
-        productName: "Strawberry",
-        productPrice: "$25",
-        productUnit: "1.kg",
-    },
-    {
-        // productImg: require('../Images/Home-Slider/banana.jpg'),
-        productName: "Banana",
-        productPrice: "$25",
-        productUnit: "1.kg",
-    },
-]
 
 const AdminHome = ({ navigation }) => {
+
+    // Temporary Data, Todo(fetch data from API).
+    const data = [
+        {
+            productName: "Mango",
+            productPrice: "$25",
+            productUnit: "1.kg",
+        },
+        {
+            productName: "Apple",
+            productPrice: "$25",
+            productUnit: "1.kg",
+        },
+        {
+            productName: "Orange",
+            productPrice: "$25",
+            productUnit: "1.kg",
+        },
+        {
+            productName: "Strawberry",
+            productPrice: "$25",
+            productUnit: "1.kg",
+        },
+        {
+            productName: "Banana",
+            productPrice: "$25",
+            productUnit: "1.kg",
+        },
+        {
+            productName: "Mango",
+            productPrice: "$25",
+            productUnit: "1.kg",
+        },
+        {
+            productName: "Apple",
+            productPrice: "$25",
+            productUnit: "1.kg",
+        },
+        {
+            productName: "Orange",
+            productPrice: "$25",
+            productUnit: "1.kg",
+        },
+        {
+            productName: "Strawberry",
+            productPrice: "$25",
+            productUnit: "1.kg",
+        },
+        {
+            productName: "Banana",
+            productPrice: "$25",
+            productUnit: "1.kg",
+        },
+        {
+            productName: "Mango",
+            productPrice: "$25",
+            productUnit: "1.kg",
+        },
+        {
+            productName: "Apple",
+            productPrice: "$25",
+            productUnit: "1.kg",
+        },
+        {
+            productName: "Orange",
+            productPrice: "$25",
+            productUnit: "1.kg",
+        },
+        {
+            productName: "Strawberry",
+            productPrice: "$25",
+            productUnit: "1.kg",
+        },
+        {
+            productName: "Banana",
+            productPrice: "$25",
+            productUnit: "1.kg",
+        },
+        {
+            productName: "Mango",
+            productPrice: "$25",
+            productUnit: "1.kg",
+        },
+        {
+            productName: "Apple",
+            productPrice: "$25",
+            productUnit: "1.kg",
+        },
+        {
+            productName: "Orange",
+            productPrice: "$25",
+            productUnit: "1.kg",
+        },
+        {
+            productName: "Strawberry",
+            productPrice: "$25",
+            productUnit: "1.kg",
+        },
+        {
+            productName: "Banana",
+            productPrice: "$25",
+            productUnit: "1.kg",
+        },
+    ]
+
     return (
         <>
             {/* Header */}
@@ -156,7 +138,10 @@ const AdminHome = ({ navigation }) => {
                         <View style={styles.productsContainer}>
                             <View style={styles.productsLeftBox}>
                                 <View>
-                                    <Image source={require("../Images/Home-Slider/orange.jpg")} style={styles.productimage} />
+                                    <Image
+                                        source={require("../Images/orange.jpg")}
+                                        style={styles.productimage}
+                                    />
                                 </View>
                                 <View style={styles.textContainer}>
                                     <Text style={styles.pName}>{item.productName}</Text>
@@ -174,7 +159,7 @@ const AdminHome = ({ navigation }) => {
     )
 }
 
-export default AdminHome
+export default AdminHome;
 
 const styles = StyleSheet.create({
     // Header.
@@ -280,4 +265,4 @@ const styles = StyleSheet.create({
         fontWeight: '700',
         textAlign: 'center',
     },
-})
+});

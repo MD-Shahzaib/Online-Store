@@ -1,9 +1,38 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, FlatList, TextInput } from 'react-native';
 import React from 'react';
-// Icons.
+// Vector-Icons.
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 const AdminOrders = ({ navigation }) => {
+
+    // Temporary Data, Todo(fetch data from API).
+    const data = [
+        {
+            userName: 'Shahzaib',
+            phoneNumber: '03453453453',
+            productName: 'Fruit',
+            orderDate: 'Just Now',
+            orderStatus: 'Pending',
+            quantity: 3,
+        },
+        {
+            userName: 'Zohaib',
+            phoneNumber: '03455653453',
+            productName: 'Vegetable',
+            orderDate: '2 feb 2023',
+            orderStatus: 'In Progress',
+            quantity: 1,
+        },
+        {
+            userName: 'Zohaib',
+            phoneNumber: '03455653453',
+            productName: 'Vegetable',
+            orderDate: '2 feb 2023',
+            orderStatus: 'In Progress',
+            quantity: 1,
+        },
+    ];
+
     return (
         <>
             {/* Header */}
@@ -25,7 +54,7 @@ const AdminOrders = ({ navigation }) => {
                 </TouchableOpacity>
             </View>
 
-            {/* LIST-ITEMS. */}
+            {/* Orders-Container */}
             <View style={styles.listContainer}>
                 <Text style={styles.orderHeading}>Orders</Text>
                 <FlatList data={data} renderItem={({ item, index }) => {
@@ -41,11 +70,14 @@ const AdminOrders = ({ navigation }) => {
                                 <Text style={styles.totalText}>Total</Text>
                                 <Text style={styles.totalPrice}>&#8360; 485.00</Text>
                             </View>
+                            <View style={styles.inputProductCatogery}>
+                                <TextInput style={styles.inputCatogery} placeholder="Change status" />
+                                <MaterialIcons name="keyboard-arrow-down" color="gray" size={30} />
+                            </View>
                         </View>
                     )
                 }} />
             </View>
-            <Text>AdminOrders</Text>
         </>
     )
 }
@@ -95,4 +127,71 @@ const styles = StyleSheet.create({
         height: 50,
     },
 
+    // ORDERS-BOX. 
+    listContainer: {
+        paddingHorizontal: 10,
+    },
+    orderHeading: {
+        fontSize: 18,
+        fontWeight: '700',
+        color: '#0c6fa6',
+        marginVertical: 10,
+    },
+    orderItemBox: {
+        paddingHorizontal: 10,
+        paddingBottom: 5,
+        marginBottom: 10,
+        borderBottomColor: '#959799',
+        borderBottomWidth: 1,
+    },
+    userName: {
+        fontSize: 18,
+        fontWeight: '700',
+    },
+    orderStatusBox: {
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        flexDirection: 'row',
+    },
+    status: {
+        fontSize: 10,
+    },
+    phoneNumber: {
+        fontSize: 10,
+    },
+    productAndQuantity: {
+        fontSize: 12,
+    },
+    totalBox: {
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        flexDirection: 'row',
+    },
+    totalText: {
+        fontSize: 15,
+        fontWeight: '700',
+        width: "25%",
+    },
+    totalPrice: {
+        fontSize: 15,
+        fontWeight: '700',
+        textAlign: 'right',
+        width: "30%",
+    },
+    inputProductCatogery: {
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        flexDirection: 'row',
+        backgroundColor: 'lightgray',
+        borderRadius: 20,
+        paddingHorizontal: 15,
+        marginVertical: 5,
+    },
+    inputCatogery: {
+        paddingVertical: 5,
+        width: "85%",
+    },
 })

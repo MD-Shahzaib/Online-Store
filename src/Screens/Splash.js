@@ -3,9 +3,6 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 
 const Splash = ({ navigation }) => {
 
-    // Initially-Navigate.
-    const navigateTo = "Register"
-
     // Splash Effect.
     useEffect(() => {
         setTimeout(() => {
@@ -23,7 +20,7 @@ const Splash = ({ navigation }) => {
                 </View>
             </View>
             <TouchableOpacity>
-                <Text style={styles.startBtn} onPress={() => navigation.navigate(navigateTo)}>Get Started</Text>
+                <Text style={styles.startBtn} onPress={() => navigation.navigate("Register")}>Get Started</Text>
             </TouchableOpacity>
         </View>
     )

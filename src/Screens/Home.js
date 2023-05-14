@@ -1,40 +1,40 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image, TextInput, FlatList } from 'react-native';
-// Vector-icons.
+// Vector-Icons.
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-
-// ) Temporary-Data.
-const data = [
-    {
-        catagory: 'Fruits',
-        desc: 'This is product description',
-        price: '500',
-    },
-    {
-        catagory: 'Vegetables',
-        desc: 'This is product description',
-        price: '500',
-    },
-    {
-        catagory: 'Meat',
-        desc: 'This is product description',
-        price: '500',
-    },
-    {
-        catagory: 'Grocery',
-        desc: 'This is product description',
-        price: '500',
-    },
-    {
-        catagory: 'Masala',
-        desc: 'This is product description',
-        price: '500',
-    },
-];
-
 const Home = ({ navigation }) => {
+
+    // ) Temporary-Data.
+    const data = [
+        {
+            catagory: 'Fruits',
+            desc: 'This is product description',
+            price: '500',
+        },
+        {
+            catagory: 'Vegetables',
+            desc: 'This is product description',
+            price: '500',
+        },
+        {
+            catagory: 'Meat',
+            desc: 'This is product description',
+            price: '500',
+        },
+        {
+            catagory: 'Grocery',
+            desc: 'This is product description',
+            price: '500',
+        },
+        {
+            catagory: 'Masala',
+            desc: 'This is product description',
+            price: '500',
+        },
+    ];
+
     return (
         // MAIN-CONTAINER.
         <View style={styles.homeContainer}>
@@ -61,7 +61,6 @@ const Home = ({ navigation }) => {
                 <TextInput
                     style={styles.homeSearchInput}
                     placeholder="Search by product name"
-                    keyboardType="default"
                 />
             </View>
 
@@ -75,7 +74,10 @@ const Home = ({ navigation }) => {
                     renderItem={({ item, index }) => {
                         return (
                             <View style={styles.csliderItemBox}>
-                                <Image style={styles.csliderItemImage} source={require('../Images/Home-Slider/item1.jpg')} />
+                                <Image
+                                    style={styles.csliderItemImage}
+                                    source={require('../Images/item1.jpg')}
+                                />
                                 <Text style={styles.csliderItemTitle}>{item.catagory}</Text>
                             </View>
                         )
@@ -88,7 +90,9 @@ const Home = ({ navigation }) => {
                 <FlatList data={data} renderItem={({ item, index }) => {
                     return (
                         <View style={styles.shopItemBox}>
-                            <Image source={require('../Images/Home-Slider/item1.jpg')} style={styles.shopItemImage} />
+                            <Image
+                                source={require('../Images/item1.jpg')} style={styles.shopItemImage}
+                            />
                             <View style={styles.shopItemTextBox}>
                                 <View style={styles.shopItemTextBoxTop}>
                                     <Text style={styles.shopItemTextBoxTitle}>{item.catagory}</Text>
@@ -105,10 +109,9 @@ const Home = ({ navigation }) => {
                     )
                 }} />
             </View>
-
         </View >
     )
-}
+};
 
 export default Home;
 
@@ -162,7 +165,6 @@ const styles = StyleSheet.create({
         width: 270,
     },
     catogerySliderContainer: {
-        // backgroundColor: '#cecfcf',
         marginVertical: 10
     },
     catogerySliderHeading: {
@@ -210,7 +212,6 @@ const styles = StyleSheet.create({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        // backgroundColor: 'red',
     },
     shopItemTextBoxTop: {
         display: 'flex',
@@ -218,7 +219,6 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         width: 250,
-        // backgroundColor: 'yellow',
     },
     shopItemTextBoxTitle: {
         fontWeight: 'bold',
@@ -244,5 +244,4 @@ const styles = StyleSheet.create({
         paddingVertical: 5,
         borderRadius: 10,
     },
-
 });

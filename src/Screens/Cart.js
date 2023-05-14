@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyleSheet, Text, View, TouchableOpacity, FlatList, Image, TextInput } from 'react-native'
-// Vector-icons.
+// Vector-Icons.
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Fontisto from 'react-native-vector-icons/Fontisto';
@@ -49,7 +49,10 @@ const Cart = ({ navigation }) => {
                         return (
                             <View style={styles.listItem}>
                                 <View style={styles.listItemImgBox}>
-                                    <Image source={require('../Images/Home-Slider/item1.jpg')} style={styles.listItemImg} />
+                                    <Image
+                                        source={require('../Images/item1.jpg')}
+                                        style={styles.listItemImg}
+                                    />
                                     <Text style={styles.catagory}>{item.catagory}</Text>
                                 </View>
                                 <View style={styles.listItemQuantityBox}>
@@ -96,11 +99,10 @@ const Cart = ({ navigation }) => {
                         <Text style={styles.placeOrder} onPress={() => navigation.navigate('Account')}>Place Order</Text>
                     </TouchableOpacity>
                 </View>
-
             </View>
         </>
     )
-}
+};
 
 export default Cart;
 
@@ -113,21 +115,18 @@ const styles = StyleSheet.create({
 
     // TOP-NAV.
     nav: {
-        // flex: 0.1,
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
         flexDirection: 'row',
         borderBottomWidth: 1,
         borderBottomColor: 'lightgray',
-        // backgroundColor: '#81c5f5',
     },
     navText1: {
         fontSize: 20,
         fontWeight: 'bold',
         color: '#0c6fa6',
         width: 120,
-        // backgroundColor: 'yellow',
     },
     navText2: {
         fontSize: 20,
@@ -137,8 +136,6 @@ const styles = StyleSheet.create({
 
     // LIST-ITEMS.
     listContainer: {
-        // backgroundColor: '#d6ecfb',
-        // flex: 0.43,
         paddingBottom: 5,
         borderBottomWidth: 1,
         borderBottomColor: 'lightgray',
@@ -149,7 +146,6 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         marginTop: 10,
-        // backgroundColor: '#0098ff',
     },
     listItemImgBox: {
         display: 'flex',

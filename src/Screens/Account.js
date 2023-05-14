@@ -1,6 +1,6 @@
 import React from 'react'
 import { FlatList, Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
-// Vector-icons.
+// Vector-Icons.
 import Feather from 'react-native-vector-icons/Feather';
 
 const Account = () => {
@@ -192,4 +192,4 @@ const styles = StyleSheet.create({
         shadowColor: 'gray',
         elevation: 3,
     }
-})
+});

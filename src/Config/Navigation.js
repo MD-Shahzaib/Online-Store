@@ -2,17 +2,18 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-// Components.
+// Screens.
 import Splash from "../Screens/Splash";
 import Register from "../Screens/Register";
 import Login from "../Screens/Login";
 import BottomNavigation from "./BottomNavigation";
 import AdminBottomNavigation from "./AdminBottomNavigation";
 
-// Methods.
-const Stack = createNativeStackNavigator();
-
 const Navigation = () => {
+
+    // Methods.
+    const Stack = createNativeStackNavigator();
+
     return (
         <>
             <NavigationContainer>
@@ -46,6 +47,6 @@ const Navigation = () => {
             </NavigationContainer>
         </>
     )
-}
+};
 
 export default Navigation;

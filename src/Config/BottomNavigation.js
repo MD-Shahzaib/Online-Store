@@ -1,18 +1,18 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-// Icons.
+// Vector-Icons.
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
-
-// Components.
+// Screens.
 import Home from "../Screens/Home";
 import Cart from "../Screens/Cart";
 import Account from "../Screens/Account";
 
-// Methods.
-const Tab = createBottomTabNavigator();
-
 const BottomNavigation = () => {
+
+    // Methods.
+    const Tab = createBottomTabNavigator();
+
     return (
         <Tab.Navigator>
             <Tab.Screen
