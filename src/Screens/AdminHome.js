@@ -99,7 +99,7 @@ const AdminHome = ({ navigation }) => {
         },
         {
             productName: "Strawberry",
-            productPrice: "$25",
+            productPrice: "$15",
             productUnit: "1.kg",
         },
         {
@@ -155,6 +155,7 @@ const AdminHome = ({ navigation }) => {
                     )
                 }} />
             </View >
+            <Text >{data.productPrice}</Text>
         </>
     )
 }
@@ -209,6 +210,7 @@ const styles = StyleSheet.create({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
+        marginBottom: 100,
     },
     apcHeading: {
         fontSize: 22,
